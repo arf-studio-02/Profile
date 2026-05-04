@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arf.Store</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/bottom-bar.css">
+    <link rel="stylesheet" href="css/sharee-bar.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="content">
+    
+        <div class="logo">
+    <img src="assets/brand.png" id="logoImg">
+</div>
+
+<!-- Popup -->
+<div class="overlay" id="overlay"></div>
+
+<div id="popup" class="popup">
+    <span id="closeBtn">&times;</span>
+    <img id="popupImg" src="assets/brand.png">
+</div>
+
+        <div class="brand">
+            <h2>ARF.STUDIO</h2>
+            <p>DESIGN • BRAND • EXPERIENCE</p>
+        </div>
+
+        <h1 class="title">Bio Link & Mini Website Design</h1>
+        <p class="subtitle">Custom Page For Your Personal & Business</p>
+
+        <div class="buttons">
+            <a href="https://www.fiverr.com/s/gD7aAAo" target="_blank" class="btn">
+                <i class="fa-solid fa-briefcase"></i> Fiverr
+            </a>
+            <a href="portfolio.html" class="btn"><i class="fa-brands fa-behance"></i> Portfolio</a>
+            <a href="https://www.instagram.com/arfstudio.02?" class="btn"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            <a href="https://www.facebook.com/share/1CUYeSBWmz/" class="btn"><i class="fa-brands fa-facebook"></i> Facebook</a>
+            <a href="https://www.tiktok.com/@arf..studio" class="btn"><i class="fa-brands fa-tiktok"></i> Tiktok</a>
+            <a href="https://wa.me/6285791630296" class="btn"><i class="fa-brands fa-whatsapp"></i> Whatsapp</a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=arf.store0222@gmail.com" target="_blank" class="btn">
+                <i class="fa-solid fa-envelope"></i> Gmail
+            </a>
+        </div>
+
+    </div>
+</div>
+  
+
+<!-- BOTTOM BAR -->
+<div id="bottom-bar-container"></div>
+
+
+<script> 
+const logo = document.getElementById("logoImg");
+const popup = document.getElementById("popup");
+const popupImg = document.getElementById("popupImg");
+const overlay = document.getElementById("overlay");
+const closeBtn = document.getElementById("closeBtn");
+
+
+logo.onclick = () => {
+    console.log("LOGO CLICKED");
+    popup.classList.add("active");
+    overlay.classList.add("active");
+
+    popupImg.src = logo.src;
+    document.body.style.overflow = "hidden";
+};
+
+function closePopup() {
+    popup.classList.remove("active");
+    overlay.classList.remove("active");
+
+    document.body.style.overflow = "auto";
+}
+
+closeBtn.onclick = closePopup;
+overlay.onclick = closePopup;
+fetch("./components/bottom-bar.html")
+.then(res => res.text())
+.then(data => {
+    document.getElementById("bottom-bar-container").innerHTML = data;
+
+    const script = document.createElement("script");
+    script.src = "js/bottom-bar.js";
+    document.body.appendChild(script);
+});
+</script>
+
+</script>
+</body>
+</html>

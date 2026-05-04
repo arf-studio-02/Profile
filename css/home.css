@@ -1,0 +1,214 @@
+
+body.popup-active {
+    backdrop-filter: blur(5px);
+}
+
+
+/* 📱 Container */
+.container {
+    width: 100%;
+    max-width: 420px;
+    min-height: 100vh;
+
+    display: flex; /* 🔥 INI YANG HILANG */
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 30px 20px;
+    margin: 0 auto; /* biar center */
+}
+
+/* CONTENT */
+.content {
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    margin-top: 80px;
+}
+
+/* LOGO */
+.logo img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+
+    padding: 15px;
+    border-radius: 15px;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: opacity 0.25s ease,
+        transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 0.35s ease;;
+    filter: blur(10px);
+    z-index: 9999;
+}
+.popup img {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    border-radius: 10px;
+}
+@keyframes popupFloat {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -52%) scale(1); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+.popup.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
+    filter: blur(0);
+    animation: popupFloat 3s ease-in-out infinite;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(8px);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: 0.25s ease;
+
+    z-index: 998;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+/* BRAND TEXT */
+.brand h2 {
+    font-size: 13px;
+    letter-spacing: 5px;
+    color: #1a1a1a;
+    font-weight: 500;
+}
+
+.brand p {
+    font-size: 11px;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+/* TITLE */
+.title {
+    font-size: 26px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* BUTTONS */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* 🔥 BUTTON (SOFT LUXURY STYLE) */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(6px);
+
+    color: #1a1a1a;
+
+    padding: 16px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(0,0,0,0.05);
+
+    box-shadow: 
+        0 4px 10px rgba(0,0,0,0.05),
+        inset 0 1px 0 rgba(255,255,255,0.6);
+
+    transition: all 0.25s ease;
+}
+
+/* Hover */
+.btn:hover {
+    transform: translateY(-3px);
+    background: rgba(255,255,255,0.85);
+}
+
+/* ICON */
+.btn i {
+    font-size: 16px;
+}
+
+/* SOCIAL */
+.socials {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.socials a {
+    width: 40px;
+    height: 40px;
+
+    background: rgba(255,255,255,0.5);
+    backdrop-filter: blur(6px);
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(0,0,0,0.05);
+
+    transition: 0.25s;
+}
+
+.socials a:hover {
+    transform: scale(1.1);
+    background: rgba(255,255,255,0.8);
+}
+
+.socials i {
+    color: #1a1a1a;
+    font-size: 15px;
+}
+

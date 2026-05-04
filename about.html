@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About ARF Studio</title>
+
+    <!-- ICON -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/bottom-bar.css">
+    <link rel="stylesheet" href="css/sharee-bar.css">
+    <link rel="stylesheet" href="css/about.css">
+</head>
+
+<body>
+
+<div class="container">
+        <div class="content"></div>
+<!-- HEADER -->
+    <div class="section-header">
+    <h2>ABOUT US</h2>
+    <h1>ARF.STUDIO Identity</h1>
+</div>
+        <h1 class="title">Who We Are</h1>
+        <p class="subtitle">Creative Studio & Digital Experience Builder</p>
+        <!-- CARDS -->
+        <div class="card-container">
+
+            <div class="card blue">
+                <h3>🎨 Our Vision</h3>
+                <p>
+                    To become a creative studio that delivers elegant, impactful, and meaningful digital experiences.
+                </p>
+            </div>
+
+            <div class="card purple">
+                <h3>🚀 What We Do</h3>
+                <p>
+                    We create clean, modern, and impactful digital designs—from branding to web experiences.
+                </p>
+            </div>
+
+            <div class="card green">
+                <h3>💡 Our Approach</h3>
+                <p>
+                    We focus on simplicity, clarity, and purpose—delivering designs that are both visually appealing and meaningful.
+                </p>
+            </div>
+
+            <div class="card orange">
+                <h3>🤝 Why Choose Us</h3>
+                <p>
+                    We prioritize your vision and transform it into designs that truly represent your brand and connect with your audience.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+<!-- BOTTOM BAR -->
+<div id="bottom-bar-container"></div>
+
+<script>
+fetch("components/bottom-bar.html")
+.then(res => res.text())
+.then(data => {
+    document.getElementById("bottom-bar-container").innerHTML = data;
+
+    const script = document.createElement("script");
+    script.src = "js/bottom-bar.js";
+    document.body.appendChild(script);
+});
+</script>
+
+</body>
+</html>

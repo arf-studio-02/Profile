@@ -1,0 +1,171 @@
+.section-header {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+/* small label (brand / category) */
+.section-header h2 {
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: #888;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+/* main title */
+.section-header h1 {
+    font-size: 12px;
+    font-weight: 600;
+    color: #888;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+    line-height: 1.1;
+}
+/* TITLE */
+.title {
+    text-align: center;
+    font-size: 44px;
+    font-weight: 900;
+    line-height: 1.1;
+    color: #111;
+    margin-bottom: 14px;
+    letter-spacing: -1px;
+}
+
+/* SUBTITLE */
+.subtitle {
+    text-align: center;
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    max-width: 520px;
+    margin: 0px auto 25px;
+}
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+/* CARD */
+/* GRID */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-top: 20px;
+}
+
+/* CARD */
+.portfolio-card {
+    background: rgba(245, 245, 245, 0.75);
+    backdrop-filter: blur(18px);
+
+    border-radius: 18px;
+    overflow: hidden;
+
+    border: 1px solid rgba(0,0,0,0.08);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06),
+        0 1px 0 rgba(255,255,255,0.6) inset;;
+
+    transition: all 0.3s ease;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* hover */
+.portfolio-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+/* IMAGE */
+.portfolio-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* CONTENT */
+.portfolio-card .info {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: left;
+}
+
+/* TITLE */
+.portfolio-card h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #111;
+    margin: 0;
+}
+
+/* DESC */
+.portfolio-card p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* BUTTON */
+.portfolio-card a {
+    margin-top: 10px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px 12px;
+    border-radius: 12px;
+
+    background: rgba(17,17,17,0.9);
+    color: #fff;
+
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+
+    transition: 0.25s ease;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-card a:hover {
+    transform: translateY(-2px);
+    background: #000;
+}
+
+/* shine effect */
+.portfolio-card a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.2),
+        transparent
+    );
+
+    transition: 0.5s;
+}
+
+.portfolio-card a:hover::after {
+    left: 100%;
+}

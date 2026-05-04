@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARF Portfolio</title>
+
+    <!-- ICON -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="css/bottom-bar.css">
+    <link rel="stylesheet" href="css/sharee-bar.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- HEADER -->
+    <div class="section-header">
+    <h2>PORTFOLIO</h2>
+    <h1>Our Latest Works</h1>
+</div>
+        <h1 class="title">Projects We've Built</h1>
+        <p class="subtitle">Website, UI Design & Digital Products</p>
+        
+        <!-- PORTFOLIO GRID -->
+        <div class="portfolio-grid">
+
+            <!-- PROJECT 1 -->
+            <div class="portfolio-card">
+                <img src="assets/portfolio/project1.png" alt="">
+                <div class="info">
+                    <h3>ARF Store Website</h3>
+                    <p>E-commerce clothing website with modern UI</p>
+                    <a href="https://arfstore.netlify.app/" class="btn">
+                        <i class="ri-external-link-line"></i> View Site
+                    </a>
+                </div>
+            </div>
+
+            <!-- PROJECT 2 -->
+            <div class="portfolio-card">
+                <img src="assets/portfolio/project2.png" alt="">
+                <div class="info">
+                    <h3>Linktree Clone</h3>
+                    <p>Personal bio link page with dynamic design</p>
+                    <a href="https://arifka.netlify.app/" class="btn">
+                        <i class="ri-external-link-line"></i> View Site
+                    </a>
+                </div>
+            </div>
+
+            <!-- PROJECT 3 -->
+            <div class="portfolio-card">
+                <img src="assets/portfolio/project3.png" alt="">
+                <div class="info">
+                    <h3>Landing Page Studio</h3>
+                    <p>Creative agency landing page with glass UI</p>
+                    <a href="index.html" class="btn">
+                        <i class="ri-external-link-line"></i> View Site
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- BOTTOM BAR -->
+<div id="bottom-bar-container"></div>
+
+<script>
+fetch("./components/bottom-bar.html")
+.then(res => res.text())
+.then(data => {
+    document.getElementById("bottom-bar-container").innerHTML = data;
+
+    const script = document.createElement("script");
+    script.src = "js/bottom-bar.js";
+    document.body.appendChild(script);
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARF Store - Website Service</title>
+
+    <!-- ICON -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/store.css">
+    <link rel="stylesheet" href="css/bottom-bar.css">
+    <link rel="stylesheet" href="css/sharee-bar.css">
+</head>
+
+<body>
+
+<div class="container">
+<div class="content"></div>
+<!-- HEADER -->
+    <div class="section-header">
+    <h2>ARF.STUDIO</h2>
+    <h1>Website Service</h1>
+</div>
+        <h1 class="title">Professional, modern & responsive websites for your business.</h1>   
+
+    <!-- SERVICE GRID -->
+    <div class="service-grid">
+
+        <!-- CARD 1 -->
+        <div class="service-card">
+            <h3>✦ PAKET 1</h3>
+            <p class="price">Rp 120.000</p>
+
+            <ul>
+                <li>Berisi 1 Halaman</li>
+                <li>Bisa Isi 5-7 Tombol Link (IG,WA,dll)</li>
+                <li>Desain Bersih & Enak Dilihat</li>
+                <li>Custom Warna Dasar</li>
+                <li>Tampilan Bagus di HP</li>
+                <li>Revisi 1 Kali</li>
+                
+            </ul>
+
+            <a href="https://wa.me/6285791630296?text=Aku Ingin Paket 1" class="btn primary">
+                <i class="ri-whatsapp-line"></i> Order Now
+            </a>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="service-card">
+            <h3>✦ PAKET 2</h3>
+            <p class="price">Rp 150.000</p>
+
+            <ul>
+                <li>Berisi 1 Halaman</li>
+                <li>Semua Fitur Paket Starter</li>
+                <li>Bisa Sampai 10-15 Link</li>
+                <li>Tombol Chat Langsung Ke Whatsapp</li>
+                <li>Desain Lebih Keren & Professional</li>
+                <li>Ada Animasi Sederhana</li>
+                <li>Bisa Tambah Deskripsi Diri/Brand</li>
+                <li>Revisi 2 Kali</li>
+            </ul>
+            <a href="https://wa.me/6285791630296?text=Aku Ingin Paket 2" class="btn primary">
+                <i class="ri-whatsapp-line"></i> Order Now
+            </a>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="service-card">
+            <h3>✦ PAKET 3</h3>
+            <p class="price">Rp 400.000</p>
+
+            <ul>
+                <li>Semua Fitur Dari Paket Sebelumnya</li>
+                <li>Berisi 5 Halaman (Home, About, DLL)</li>
+                <li>Link & Konten Lebih Bebas (sesuai Kebutuhan)</li>
+                <li>Desain Full Custom Sesuai Brand Kamu</li>
+                <li>Dapat Subdomain netlify.app (opsional)</li>
+                <li>Revisi 3 Kali</li>
+                <li>Maintenance 7 Hari</li>
+            </ul>
+            <a href="https://wa.me/6285791630296?text=Aku Ingin Paket 3" class="btn primary">
+                <i class="ri-whatsapp-line"></i> Order Now
+            </a>
+        </div>
+        
+    </div>
+</div>
+<!-- BOTTOM BAR -->
+<div id="bottom-bar-container"></div>
+
+<script>
+fetch("./components/bottom-bar.html")
+.then(res => res.text())
+.then(data => {
+    document.getElementById("bottom-bar-container").innerHTML = data;
+
+    const script = document.createElement("script");
+    script.src = "js/bottom-bar.js";
+    document.body.appendChild(script);
+});
+</script>
+
+</body>
+</html>
